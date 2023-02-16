@@ -2,40 +2,48 @@ pipeline{
 agent any
 stages
 {
-stage('mvn validate')
+stage('maven clean')
+{
+steps{
+  sh '''#!/bin/bash
+   ls -ltrh
+}
+}
+stage('maven validate')
 {
 steps{
 echo "validating the project"
 }
 }
-stage('mvn compile')
+stage('maven compile')
 {
 steps{
 echo "compiling the project"
 }
 }
-stage('mvn test')
+stage('maven test')
 {
 steps{
 echo "testing the project"
 }
 }
-stage('mvn package')
+stage('maven package')
 {
 steps{
 echo "packaging the project"
 }
 }
-stage('mvn install')
+stage('maven install')
 {
 steps{
 echo "installing the project"
 }
 }
-stage('mvn deploy')
+stage('maven deploy')
 {
 steps{
 echo "deploying the project"
 }
 }   
- 
+}
+}
