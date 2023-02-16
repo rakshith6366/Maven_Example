@@ -8,10 +8,22 @@ steps{
 echo "validating the project"
 }
 }
+stage('mvn compile')
+{
+steps{
+echo "compiling the project"
+}
+}
 stage('mvn test')
 {
 steps{
 echo "testing the project"
+}
+}
+stage('mvn package')
+{
+steps{
+echo "packaging the project"
 }
 }
 stage('mvn install')
@@ -19,4 +31,11 @@ stage('mvn install')
 steps{
 echo "installing the project"
 }
-} 
+}
+stage('mvn deploy')
+{
+steps{
+echo "deploying the project"
+}
+}   
+ 
