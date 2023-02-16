@@ -1,1 +1,22 @@
-file is added
+pipeline{
+agent any
+stages
+{
+stage('mvn validate')
+{
+steps{
+echo "validating the project"
+}
+}
+stage('mvn test')
+{
+steps{
+echo "testing the project"
+}
+}
+stage('mvn install')
+{
+steps{
+echo "installing the project"
+}
+} 
