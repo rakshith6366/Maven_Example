@@ -1,1 +1,26 @@
-new file developed
+pipeline{
+agent any
+stages 
+{
+stage('Build') 
+{
+steps{
+    sh '''#!/bin/bash
+         pwd 
+         '''
+}
+}
+stage('Test') 
+{
+steps{
+echo "Testing the Project.........."
+}
+}
+stage('Deploy') 
+{
+steps{
+echo "Deploying the Project.........."
+}
+}
+}
+}
